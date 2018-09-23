@@ -40,8 +40,7 @@ def reformat_languages(languages)
 		hash1.each do |names, hash2|
 			hash2.each do |types, string|
 		
-    		hash[names] = {:type => string, :style => [] } if !hash[names] # need to separate the array out so it can be shoveled in separately. This method is replacing the values. 
-		
+    		hash[names] = {:type => string, :style => [] } if !hash[names] 
     		hash[names][:style] << styles 
 			end
 		end
