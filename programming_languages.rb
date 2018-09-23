@@ -40,11 +40,13 @@ def reformat_languages(languages)
 		hash1.each do |names, hash2|
 			hash2.each do |types, string|
 		# need to wait to do this until I've added the name and inner hash
-		hash[names] = {:type => string, :style => [styles]}
-		#hash[names][:style] = styles
+		hash[names] = {:type => string, :style => [] } if !hash[names] # need to separate the array out so it can be shoveled in separately. This method is replacing the values. 
+		
+		hash[names][:style] << styles # this is still pushing in the last one 
+	#binding.pry
 			end
 		end
 	end	
-#	binding.pry
+	binding.pry
 	hash
 end
