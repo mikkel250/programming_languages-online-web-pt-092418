@@ -33,17 +33,18 @@ languages = {
 }
 
 
+
 def reformat_languages(languages)
 	hash = {}
 	languages.each do |styles, hash1|
 		hash1.each do |names, hash2|
 			hash2.each do |types, string|
 		# need to wait to do this until I've added the name and inner hash
-		hash[names] = {:type => string, :style => styles}
+		hash[names] = {:type => string, :style => [styles]}
 		#hash[names][:style] = styles
 			end
 		end
 	end	
-	#binding.pry
+#	binding.pry
 	hash
 end
